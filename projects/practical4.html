@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Practical 4 Report</title>
+	
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+        
+        *{
+            font-family: 'Roboto', sans-serif;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        div :nth-child(4) {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        dl + ol {
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            font-style: normal; 
+        }
+
+        .pw4 :hover {
+            background-color : forestgreen; 
+        }
+
+        thead th:last-child {
+            color: lightseagreen;
+        }
+
+        tbody td:last-child {
+            color: lightseagreen;
+        }
+
+        tfoot th:last-child {
+            color: lightseagreen;
+        }
+
+        ul li:nth-child(odd),
+        table tr:nth-child(even) {
+            background-color: #a7fff0;
+        }
+
+        p::first-letter {
+            font-size: 200%;
+        }
+
+        ::selection {
+            background-color: rgb(76, 130, 103);
+        } 
+
+        li::before {
+            content: "\2192 ";
+            margin-right: 5px;
+        }
+
+        ol :not(:last-child) {
+            background-color: #ff9a9a;
+        }
+    </style>
+        
+</head>
+
+
+<body id="top">
+    <main>
+        <section id="text">
+            <header>
+                <h1> Answers </h1>
+            </header>    
+            <article id="text__paragraphs">
+              <div class="pw4">
+                <h2>What is selector’s specificity and how it’s calculated?</h2>
+                <p>
+                    <mark>The selector's specificity</mark> is a value that determines which style rule will be applied when multiple conflicting rules target the same element. <strong>Specificity</strong> is calculated based on the <em>combination of selectors</em> used in the CSS rule. The more specific a selector is, the higher its specificity value.
+                </p>
+                
+                <h3>What are complex selectors?</h3>
+                <p>
+                    <mark>Complex selectors</mark> are CSS selectors that involve combining <em>multiple simple selectors to target elements in a more specific way</em>. Examples of complex selectors include <strong>descendant selectors, child selectors, adjacent sibling selectors, and more</strong>.
+                </p>
+                
+                <h4>What is the difference between pseudo-classes and pseudo-elements?</h4>
+                <p>
+                    <mark>Pseudo-classes</mark> are keywords that specify <em>a special state of the selected element</em>, such as <strong>":hover"</strong> for mouse-hover effect.<mark>Pseudo-elements</mark>, on the other hand, target <em>specific parts of an element</em>, like <strong>"::before" and "::after"</strong> for inserting content <em>before and after</em> an element respectively.
+                </p>
+              </div>
+            </article>
+            <article id="text__blockquotes">
+              <header>
+                <h2>Blockquotes</h2>
+              </header>
+              <div>
+                <blockquote>
+                  <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document,
+                    that is set off from the main text as a paragraph, or block of text.</p>
+                  <p>It is typically distinguished visually using indentation and a different typeface or smaller size
+                    quotation. It may or may not include a citation, usually placed at the bottom.</p>
+                  <cite><a href="#!">Said no one, ever.</a></cite>
+                </blockquote>
+              </div>
+            </article>
+            <article id="text__lists">
+              <header>
+                <h2>Lists</h2>
+              </header>
+              <div>
+                <h3>Definition list</h3>
+                <dl>
+                  <dt>Definition List Title</dt>
+                  <dd>This is a definition list division.</dd>
+                </dl>
+                <h3>Ordered List</h3>
+                <ol>
+                  <li>List Item 1</li>
+                  <li>List Item 2</li>
+                  <li>List Item 3</li>
+                </ol>
+                <h3>Unordered List</h3>
+                <ul>
+                  <li>List Item 1</li>
+                  <li>List Item 2</li>
+                  <li>List Item 3</li>
+                </ul>
+              </div>
+              <footer>
+              </footer>
+            </article>
+            <article id="text__tables">
+              <header>
+                <h2>Tabular data</h2>
+              </header>
+              <table>
+                <caption>Table Caption</caption>
+                <thead>
+                  <tr>
+                    <th>Table Heading 1</th>
+                    <th>Table Heading 2</th>
+                    <th>Table Heading 3</th>
+                    <th>Table Heading 4</th>
+                    <th>Table Heading 5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                  <tr>
+                    <td>Table Cell 1</td>
+                    <td>Table Cell 2</td>
+                    <td>Table Cell 3</td>
+                    <td>Table Cell 4</td>
+                    <td>Table Cell 5</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th>Table Footer 1</th>
+                    <th>Table Footer 2</th>
+                    <th>Table Footer 3</th>
+                    <th>Table Footer 4</th>
+                    <th>Table Footer 5</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </article>
+          </section>
+    </main>
+</body>
+
+</html>

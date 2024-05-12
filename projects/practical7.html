@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
+    <title>Simple Calculator</title>
+    <style>
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        input, select, button {
+            margin-bottom: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .owl-carousel {
+            width: 100%;
+            margin: 50px auto;
+        }
+
+        .item {
+            background: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 1.5em;
+        }
+
+        p {
+            color: #666;
+            font-size: 1em;
+        }
+    </style>
+    <script>
+        //makes basic calculations
+       function calculate(num1, operator, num2) {
+        switch(operator) {
+         case '+':
+            return num1 + num2;
+         case '-':
+            return num1 - num2;
+         case '*':
+            return num1 * num2;
+         case '/':
+            if(num2 != 0) {
+               return num1 / num2;
+            } else {
+               return "Error: Division by zero is not allowed.";
+            }
+            default:
+               return "Error: Invalid operator.";
+        }
+    }
+    //takes value of inputed numbers, replaces it and calculates
+       function performCalculation() {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var operator = document.getElementById('operator').value;
+        var num2 = parseFloat(document.getElementById('num2').value);
+        var result = calculate(num1, operator, num2);
+        document.getElementById('result').value = "The result is: " + result;
+    }
+    </script>   
+</head>
+<body>
+    <h1>Basic calculations</h1>
+    <form id="calculatorForm">
+        <label for="num1">First number:</label>
+        <input type="number" id="num1" value="0"></input>
+
+        <label for="operator">Operation:</label>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br>
+
+        <label for="num2">Second number:</label>
+        <input type="number" id="num2" value="0"><br>
+
+        <button type="button" onclick="performCalculation()">Calculate</button>
+        <button type="reset">Reset</button></input>
+
+        <output id="result"></output>
+    </form>
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <h2>What is repaint and reflow of the webpage?</h2>
+            <p>Repaint updates the visual appearance without changing layout, while reflow recalculates positions and sizes of elements.</p>
+        </div>
+        
+        <div class="item">
+            <h2>How does JavaScript affect page load speed?</h2>
+            <p>Poorly optimized JavaScript can slow down page loading time, impacting performance negatively, that's why developers often write JS code in additional file.</p>
+        </div>
+    
+        <div class="item">
+            <h2>What is minification of scripts and its benefits?</h2>
+            <p>Minification removes unnecessary characters from code, such as long variable names, white-spaces reducing file size and improving page loading speed.</p>
+        </div>
+    
+        <div class="item">
+            <h2>What is a JavaScript Web Worker and when do we need it?</h2>
+            <p> A JavaScript Web Worker is a script that runs in the background, separate from the main browser thread, it is useful for handling complex tasks without blocking the UI.</p>
+        </div>
+    
+        <div class="item">
+            <h2>Sources used for answering the questions:</h2>
+            <p><a href="https://developer.mozilla.org/">MDN Web Docs</a></p>
+            <p><a href="https://www.imperva.com/learn/performance/minification/#:~:text=Minification%20is%20the%20process%20of,into%20a%20better%20user%20experience.">Imperva</a></p>
+        </div>
+    </div> 
+    <script>
+        $(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            loop:true,
+            margin:10,
+            nav:true,
+            responsive:{
+            0:{
+            item:1
+            },
+            600:{
+            item:3
+            },
+            1000:{
+            item:5
+            }
+        }
+    });
+    });
+    </script>  
+</body> 
+<footer>
+    <script src="jquery.min.js"></script>
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+</footer>      
+</html>
